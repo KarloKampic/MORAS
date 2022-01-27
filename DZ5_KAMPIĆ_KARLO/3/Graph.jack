@@ -1,0 +1,26 @@
+class Graph
+{
+	function void koordinatni(){
+		do Screen.drawLine(0,128,255,128);
+		do Screen.drawLine(128,0,128,255);
+		return;
+	}
+
+	function void fja(){
+		var int x, y;
+		
+		let x = (-32);
+		while(x < 33){
+			let y = Graph.f(x);
+			//if(~((x<32) & (x>-33)){...} 
+			let x = x+1;
+		}
+		return;
+	}
+
+	function int f (int x)
+	{
+		return ((x * x) - (4 * x) - 1);
+	}
+
+}

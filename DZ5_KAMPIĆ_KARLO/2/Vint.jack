@@ -1,0 +1,131 @@
+class Vint
+{
+	field Array A;
+	field int size;
+	
+	constructor Vint new(int n){
+		
+		var int n;
+		if (n<0){
+			let size = 1;
+			let A = Array.new(size);
+		}
+		else{
+			let size = Main.pot(2, n);
+			let A = Array.new(size);
+		
+		}
+		
+		return this;
+	}
+	
+	method void set (int k, int v){
+		
+		let A[k] = v;
+		return;
+	}
+	method int get(int k){
+		return A[k];
+	}
+	
+	method int len(){
+		return size;
+	}
+	
+	method void resize(int m){
+		var int m, newsize, minim, i;
+		var Array A, B;
+		if (m<0){
+			let newsize = 1;
+			let A = Array.new(newsize);
+		}
+		else{
+			let newsize = Main.pot(2, m);
+			let A = Array.new(newsize);
+		
+		}
+		let minim = Main.min(size, newsize);
+		let B = Array.new(minim + 1);
+		let i = 0;
+		while ((i < minim) | (i = minim)){
+			let B[i] = A[i];
+			let i = i+1;
+		}
+		let A = B;
+		let size = newsize;
+		return;
+	}
+	
+	function boolean is_eq(Vint X, Vint Y){
+		var int x, br;
+		if ((X.len()) = (Y.len())){
+			let x = X.len();
+			let br = 0;
+			while(br<x){
+				if(~(X.get(br) = Y.get(br))){
+					return false;
+				}
+				else{}
+				let br = br + 1;
+			}
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	
+	function boolean elems(Vint C, Vint D){
+		
+		var int c, i, j; 
+		var Array CC, DD;
+		let c = C.len();
+		let i = c;
+		let CC = Array.new(c);
+		let DD = Array.new(c);
+		
+		if(C.len() = D.len()){
+			let j = 0;
+			while(~(i = 0)){
+				let CC[j] = C.get(j);
+				let DD[j] = D.get(j);
+				let j = j+1;
+				let i = i-1;
+			}
+			do QS.sort(CC, 0, c-1);
+			do QS.sort(DD, 0, c-1);
+			let j = 0;
+			while(~(c = 0)){
+				if(~(CC[j] = DD[j])){
+					return false;
+				}
+				let j = j + 1;
+				let c = c - 1;
+			}
+			
+		}
+		else{
+			return false;
+		}
+		return true;
+	}
+	
+	method void print(){
+        var int i;
+		let i = 0;
+        while(i < size){
+            do Output.printInt(A[i]);
+            let i = i + 1;
+        }
+        return;
+    }
+}
+
+
+
+
+
+
+
+
+

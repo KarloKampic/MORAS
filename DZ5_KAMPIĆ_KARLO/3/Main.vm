@@ -1,0 +1,7 @@
+function Main.main 0
+call Graph.koordinatni 0
+pop temp 0
+call Graph.fja 0
+pop temp 0
+push constant 0
+return
