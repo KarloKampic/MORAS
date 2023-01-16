@@ -1,0 +1,30 @@
+function Sys.init 0
+
+// THAT = 16384
+push constant 16384
+pop pointer 1
+
+// spremi niz 2, 3, 4, 6, 7, 8, 9 u THAT[0..6]
+push constant 2
+pop that 0
+push constant 3
+pop that 1
+push constant 4
+pop that 2
+push constant 6
+pop that 3
+push constant 7
+pop that 4
+push constant 8
+pop that 5
+push constant 9
+pop that 6
+
+// spremi argumente za search
+push pointer 1 // pocetna adresa niza (THAT)
+push constant 7 // length
+push constant 1 // broj koji pretrazujemo 
+call BS.search 3 // pozovi binary search
+
+label END
+goto END

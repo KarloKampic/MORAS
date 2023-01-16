@@ -1,0 +1,50 @@
+function RJ.mid 1
+push argument 2
+pop local 0
+push argument 0
+push argument 1
+lt
+push argument 1
+push argument 2
+lt
+and
+push argument 2
+push argument 1
+lt
+push argument 1
+push argument 0
+lt
+and
+or
+if-goto PRVI
+goto DRUGI
+label PRVI
+push argument 1
+pop local 0
+label DRUGI
+push argument 1
+push argument 0
+lt
+push argument 0
+push argument 2
+lt
+and
+push argument 2
+push argument 0
+lt
+push argument 0
+push argument 1
+lt
+and
+or
+if-goto TRECI
+goto CETVRTI
+label TRECI
+push argument 0
+pop local 0
+label CETVRTI
+push local 0
+call Output.printInt 1
+pop temp 0
+push local 0
+return
