@@ -1,0 +1,81 @@
+function Main.pot 2
+push constant 0
+pop local 0
+push constant 1
+pop local 1
+label WHILE_EXP0
+push local 0
+push argument 1
+lt
+not
+if-goto WHILE_END0
+push local 1
+push argument 0
+call Math.multiply 2
+pop local 1
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push local 1
+return
+function Main.min 0
+push argument 0
+push argument 1
+gt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push argument 1
+return
+goto IF_END0
+label IF_FALSE0
+push argument 0
+return
+label IF_END0
+function Main.main 2
+push constant 4
+call Vint.new 1
+pop local 0
+push local 0
+push constant 0
+push constant 8
+call Vint.set 3
+pop temp 0
+push local 0
+push constant 1
+push constant 4
+call Vint.set 3
+pop temp 0
+push local 0
+push constant 2
+push constant 3
+call Vint.set 3
+pop temp 0
+push constant 4
+call Vint.new 1
+pop local 1
+push local 1
+push constant 0
+push constant 8
+call Vint.set 3
+pop temp 0
+push local 1
+push constant 2
+push constant 4
+call Vint.set 3
+pop temp 0
+push local 1
+push constant 1
+push constant 6
+call Vint.set 3
+pop temp 0
+push local 0
+push local 1
+call Vint.elems 2
+call Output.printInt 1
+pop temp 0
+push constant 0
+return

@@ -1,0 +1,47 @@
+function Graph.koordinatni 0
+push constant 0
+push constant 128
+push constant 255
+push constant 128
+call Screen.drawLine 4
+pop temp 0
+push constant 128
+push constant 0
+push constant 128
+push constant 255
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Graph.fja 2
+push constant 32
+neg
+pop local 0
+label WHILE_EXP0
+push local 0
+push constant 33
+lt
+not
+if-goto WHILE_END0
+push local 0
+call Graph.f 1
+pop local 1
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function Graph.f 0
+push argument 0
+push argument 0
+call Math.multiply 2
+push constant 4
+push argument 0
+call Math.multiply 2
+sub
+push constant 1
+sub
+return

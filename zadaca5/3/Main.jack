@@ -1,0 +1,9 @@
+class Main
+{
+	function void main() 
+	{		
+		do Graph.koordinatni();
+		do Graph.fja();
+		return;
+	}
+}

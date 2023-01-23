@@ -1,0 +1,51 @@
+class Main
+{
+
+	function int pot(int a, int x){
+        var int i, rez;
+        let i = 0;
+        let rez = 1;
+        while(i < x){
+            let rez = rez * a;
+
+            let i = i + 1;
+        }
+        return rez;
+    }
+
+	function int min( int b, int c){
+		if (b>c){
+			return c;
+		}
+		else{
+			return b;
+		}
+	
+	}
+
+	function void main() 
+	{		
+		var Vint M, N;
+		let M = Vint.new(4);
+		do M.set(0, 8);
+		do M.set(1, 4);
+		do M.set(2, 3);
+		//do M.print();
+		//do Output.printInt(M.len());
+		//do Output.printInt(M.get(1));
+		
+		let N = Vint.new(4);
+		do N.set(0, 8);
+		do N.set(2, 4);
+		do N.set(1, 6);
+		//do N.print();
+		//do Output.printInt(Vint.is_eq(M, N));
+		
+		//do M.resize(2);
+		//do Output.printInt(M.len());
+		//do M.print();
+		do Output.printInt(Vint.elems(M, N));
+		
+		return;
+	}
+}

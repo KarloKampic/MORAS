@@ -1,0 +1,34 @@
+class QS
+{
+	function int qs(Array A, int s, int e){
+		var int i, j, piv, z;
+		let piv = A[e]; 
+		let i = s;
+		let j = s;
+		while(j < e){
+			if(A[j] < piv){
+				let z = A[j];
+				let A[j] = A[i];
+				let A[i] = z;
+
+				let i = i + 1;
+			}
+			let j = j + 1;
+		}
+		let z = A[j];
+		let A[j] = A[i];
+		let A[i] = z;
+
+		return i;
+
+	}
+	function void sort(Array A, int s, int e){
+		var int piv;
+		if (s < e){
+			let piv = QS.qs(A, s, e); 		
+			do QS.sort(A, s, (piv - 1));
+			do QS.sort(A, (piv + 1), e);
+		}
+		return;
+	}
+}
